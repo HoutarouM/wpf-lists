@@ -42,11 +42,74 @@
                 </ItemsControl>
             </TabItem>
             <TabItem Header="ContextControl 2">
-                <ItemsControl ItemsSource="{Binding StringCollection }" />
+                <ItemsControl ItemsSource="{Binding Films}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="{Binding Title}" />
+                                <Label Content="{Binding Score}" />
+                                <Label Content="{Binding Description}" />
+                                <Label Content="{Binding Genre}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
             </TabItem>
-            <TabItem Header="ListBox"></TabItem>
-            <TabItem Header="ListView"></TabItem>
-            <TabItem Header="DataGrid"></TabItem>
+            <TabItem Header="ListBox">
+                <ListBox ItemsSource="{Binding Films}">
+                    <!-- list box pasek pojawia sie elementy klikalne-->
+
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="{Binding Title}" />
+                                <Label Content="{Binding Score}" />
+                                <Label Content="{Binding Description}" />
+                                <Label Content="{Binding Genre}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </TabItem>
+            <TabItem Header="ListView">
+                <ListView ItemsSource="{Binding Films}" SelectedItem="{Binding CheckedFilm}">
+                   <!-- <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Label Content="{Binding Title}" />
+                                <Label Content="{Binding Score}" />
+                                <Label Content="{Binding Description}" />
+                                <Label Content="{Binding Genre}" />
+                                <Button Click="Show">Pokaz</Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    -->
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn DisplayMemberBinding="{Binding Title}" />
+                            <GridViewColumn DisplayMemberBinding="{Binding Score}" />
+                            <GridViewColumn DisplayMemberBinding="{Binding Description}" />
+                            <GridViewColumn DisplayMemberBinding="{Binding Genre}" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>                
+            </TabItem>
+            <TabItem Header="ListView2">
+                <ListViewItem>
+                    <Label>Cokolwiek</Label>
+                </ListViewItem>
+            </TabItem>
+            <TabItem Header="DataGrid">
+                <DataGrid ItemsSource="{Binding Films}" AutoGenerateColumns="True" IsReadOnly="True" AllowDrop="True">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="title" Binding="{Binding Title}" />
+                        <DataGridTextColumn Header="score" Binding="{Binding Score}" />
+                        <DataGridTextColumn Header="desc" Binding="{Binding Description}" />
+                        
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
         </TabControl>
     </Grid>
 </Window>
