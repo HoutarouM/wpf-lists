@@ -48,9 +48,15 @@ namespace liste
             Films.Add(new Film("Avatar", 6, "film", "sci-fi"));
         }
 
+
         public void Show(object s, RoutedEventArgs e)
         {
             MessageBox.Show(CheckedFilm.Title);
+        }
+
+        private void addFilm(object sender, RoutedEventArgs e)
+        {
+            Films.Add(new Film(nazwa.Text, int.Parse(score.Text), desc.Text, genre.Text));
         }
     }
 }

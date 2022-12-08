@@ -110,6 +110,25 @@
                     </DataGrid.Columns>
                 </DataGrid>
             </TabItem>
+
+            <TabItem Header="Add film">
+                <StackPanel>
+                    <TextBlock>Dodaj nowy film:</TextBlock>
+                    <TextBlock>Nazwa: </TextBlock>
+                    <TextBox x:Name="nazwa" />
+
+                    <TextBlock>Score:</TextBlock>
+                    <TextBox x:Name="score" />
+
+                    <TextBlock>Opis:</TextBlock>
+                    <TextBox x:Name="desc" />
+
+                    <TextBlock>Genre:</TextBlock>
+                    <TextBox x:Name="genre" />
+
+                    <Button Click="addFilm">Dodaj</Button>
+                </StackPanel>
+            </TabItem>
         </TabControl>
     </Grid>
 </Window>
