@@ -20,9 +20,14 @@ namespace liste
     /// </summary>
     public partial class MainWindow : Window
     {
+        public IEnumerable<string> StringCollection { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
+
+            StringCollection = "Ala ma kota Ala ma kota Ala ma kota Ala ma kota Ala ma kota Ala ma kota Ala ma kota Ala ma kota".Split(' ').ToList();
+            DataContext = this;
         }
     }
 }

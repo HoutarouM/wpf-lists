@@ -41,6 +41,9 @@
                     </StackPanel>
                 </ItemsControl>
             </TabItem>
+            <TabItem Header="ContextControl 2">
+                <ItemsControl ItemsSource="{Binding StringCollection }" />
+            </TabItem>
             <TabItem Header="ListBox"></TabItem>
             <TabItem Header="ListView"></TabItem>
             <TabItem Header="DataGrid"></TabItem>
